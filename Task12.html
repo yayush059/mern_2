@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6 (JS)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%; 
+            max-width: 400px; 
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .input-group label {
+            display: none;
+        }
+        .input-group input {
+            width: 90%;
+            padding: 10px; 
+            border: 1px solid #ccc;
+            padding-left: 25px;
+            border-radius: 5px;
+        }
+        .icon {
+            position: absolute;
+            padding: 2px;
+            left: 0;
+            top: 35%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+        .login-button {
+            background-color: #3897f0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .signup-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Login</h1>
+        <div class="input-group">
+            <box-icon class="icon" type='solid' name='user'></box-icon>
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <box-icon class="icon" type='solid' name='lock-alt'></box-icon>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button class="login-button" onclick="login()">Log In</button>
+        <p class="signup-link">Don't have an account? <a href="#">Sign up now</a></p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(username != "" && password !=""){
+            alert(`Logged in as ${username}`);
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            }
+            else{
+                alert(`Please Enter Username and password`);
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

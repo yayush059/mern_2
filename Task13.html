@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-7 (JS)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #train {
+        position: relative;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes moveTrain {
+        0% {
+          left: 0;
+        }
+
+        100% {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Train Animation</h1>
+    <div id="train">
+      <img
+        src="train-removebg-preview.png"
+        alt="Train"
+        style="width: 300px"
+      />
+    </div>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+
+    <script>
+      const train = document.getElementById("train");
+      const startButton = document.getElementById("startButton");
+      const stopButton = document.getElementById("stopButton");
+
+      let animationInterval;
+
+      startButton.addEventListener("click", () => {
+        train.style.animationName = "moveTrain";
+        train.style.animationPlayState = "running";
+      });
+
+      stopButton.addEventListener("click", () => {
+        train.style.animationPlayState = "paused";
+      });
+    </script>
+  </body>
+</html>

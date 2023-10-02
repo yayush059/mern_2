@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-4 (JS)</title>
+    <style>
+      .container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="date">Show Date</button><br />
+      <p id="date_res"></p>
+      <br />
+      <button id="time">Show Time</button> <br />
+      <p id="time_res"></p>
+      <br />
+    </div>
+  </body>
+  <script>
+    document.getElementById("date").addEventListener("click", () => {
+      let date = new Date();
+      let monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let monthName = monthNames[date.getMonth()];
+      document.getElementById(
+        "date_res"
+      ).innerHTML = `${date.getDate()}/${monthName}/${date.getFullYear()}`;
+    });
+    document.getElementById("time").addEventListener("click", () => {
+      let time = new Date();
+      document.getElementById("time_res").innerHTML = `${time}`;
+    });
+  </script>
+</html>

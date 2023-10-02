@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-2 (JS)</title>
+  </head>
+  <body>
+    <h1>
+      JavaScript code that returns a passed string with letters in
+      alphabetical order
+    </h1>
+    <input type="text" placeholder="Enter a text" id="txt" />
+    <button type="submit" id="alphabetical_order">Alphabetical order</button>
+    <h3 id="order"></h3>
+  </body>
+  <script>
+    function alphabet_order(str) {
+      return str.split("").sort().join("");
+    }
+    document.querySelector("#alphabetical_order").addEventListener("click", () => {
+      let str = document.getElementById("txt").value;
+      document.getElementById("order").innerHTML = `${alphabet_order(str)}`;
+    },false)
+  </script>
+</html>
